@@ -117,4 +117,44 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
-1
+1. b
+2. c
+3. d
+4. b
+5. a
+6. c
+7. a
+8. a
+9. d
+10. b
+11. c
+12. The different process states in XV6 are:
+- Unused - The process slot/table entry is unused
+- Embryo - The process has been allocated a slot but has not been fully initialized yet 
+- Sleeping - The process is not runnable, it is waiting for some event
+- Runnable - The process is ready to run but not currently running
+- Running - The process is currently executed on the CPU
+- Zombie - The process has finished execution but still has an entry for the parent to access
+
+13. The XV6 file system structure consists of:
+- Superblock - Contains metadata like size of file system, number of data blocks, etc.
+- Inode blocks - An inode represents a file and contains metadata like size, permissions, data block addresses, etc. 
+- Data blocks - Contain the actual file content
+- Directories - Keep track of free/allocated inodes and data blocks
+
+14. System calls are APIs for programs to request services from the kernel. example fork. Library functions are APIs that run in user space, like printf. The key difference is that library functions don't require privileged operations so they can run in user space, while system calls require kernel privileges.
+
+15. Memory paging in XV6 involves breaking physical memory into fixed sized pages for efficient memory usage
+
+16. Some essential XV6 shell commands are:
+- ls - List files and directories
+- cd - change directory
+- sh - Run the shell
+
+17. Mechanisms like locks and semaphores are used to coordinate acces to shared resources, preventing conflict
+
+18. events that  alter natural program flow. The kernel handles interrupts by invoking corresponding ISR's
+
+19. uses paging to allow process to have illusion of larger memory
+
+20. The XV6 boot process begins when the computer is powered on and the CPU starts executing bootloader code in ROM. This loads the kernel image into memory and sets up page tables and segment descriptors. It then transfers control to higher kernel code which initializes device drivers and subsystems. Finally, main() starts initializing processes, buffers, files, inodes and calls userinit() to spawn the first process which executes the shell /initcode/sh command.
